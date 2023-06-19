@@ -21,13 +21,7 @@
     <link href="assets/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
     <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-    <style>
-        body {
-          background-image: url('../images/bg-c.jpg');
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
-    </style>
+
   </head>
   <body class="login-page bg-login">
     <div class="login-box">

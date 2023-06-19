@@ -68,6 +68,22 @@ if ($_SESSION['hak_akses']=='Super Admin') { ?>
   <?php
   }
 
+  // jika menu data barang masuk dipilih, menu data barang masuk aktif
+  if ($_GET["module"]=="expired" || $_GET["module"]=="expired") { ?>
+    <li class="active">
+      <a href="?module=expired"><i class="fa fa-sign-out"></i> Expired </a>
+      </li>
+  <?php
+  }
+  // jika tidak, menu data barang masuk tidak aktif
+  else { ?>
+    <li>
+      <a href="?module=expired"><i class="fa fa-sign-out"></i> Expired </a>
+      </li>
+  <?php
+  }
+
+
 	// jika menu Laporan Stok barang dipilih, menu Laporan Stok barang aktif
 	if ($_GET["module"]=="lap-stok") { ?>
 		<li class="active treeview">

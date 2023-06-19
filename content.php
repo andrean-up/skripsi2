@@ -50,6 +50,17 @@ else {
 	}
 	// -----------------------------------------------------------------------------
 
+	// jika halaman konten yang dipilih barang masuk, panggil file view barang masuk
+	elseif ($_GET['module'] == 'expired') {
+		include "modules/expired/view.php";
+	}
+
+	// jika halaman konten yang dipilih form barang masuk, panggil file form barang masuk
+	elseif ($_GET['module'] == 'expired') {
+		include "modules/expired/form.php";
+	}
+	// -----------------------------------------------------------------------------
+
 	// jika halaman konten yang dipilih laporan stok, panggil file view laporan stok
 	elseif ($_GET['module'] == 'lap-stok') {
 		include "modules/lap-stok/view.php";

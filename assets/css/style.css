@@ -1,6 +1,9 @@
 .bg-login {
 	background-image: url("../../images/bg-c.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 	width: 100%;
+    background-position-x: -250px;
 }
 
 .login-box-body, .register-box-body {

@@ -83,6 +83,39 @@
         </div>
       </div><!-- ./col -->
 
+      <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div style="background-color:#00c0ef;color:#fff" class="small-box">
+          <div class="inner">
+            <?php  
+            // fungsi query untuk menampilkan data dari tabel barang
+            $query = mysqli_query($mysqli, "SELECT COUNT(kode_barang) as jumlah FROM db_barang")
+                                            or die('Ada kesalahan pada query tampil Data barang: '.mysqli_error($mysqli));
+
+            // tampilkan data
+            $data = mysqli_fetch_assoc($query);
+            ?>
+            <h3><a href="main.php?module=expired"><?php echo $data['jumlah']; ?></a></h3>
+            <br>
+            <p>Expired</p>
+          </div>
+          <div class="icon">
+            <i class="fa fa-folder"></i>
+          </div>
+          <?php  
+          if ($_SESSION['hak_akses']!='Manajer') { ?>
+            <a href="?module=expired&form=add" class="small-box-footer" title="Tambah Data" data-toggle="tooltip"><i class="fa fa-plus"></i></a>
+          <?php
+          } else { ?>
+            <a class="small-box-footer"><i class="fa"></i></a>
+          <?php
+          }
+          ?>
+        </div>
+      </div><!-- ./col -->
+
       <div class="col-lg-3 col-xs-6">
         <!-- small box -->
         <div style="background-color:#f39c12;color:#fff" class="small-box">
