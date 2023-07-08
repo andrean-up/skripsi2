@@ -2,7 +2,7 @@
   function tampil_barang(input){
     var num = input.value;
 
-    $.post("modules/expired/barang.php", {
+    $.post("modules/barang-masuk/barang.php", {
       dataidbarang: num,
     }, function(response) {      
       $('#stok').html(response)
@@ -47,7 +47,7 @@ if ($_GET['form']=='add') { ?>
     </h1>
     <ol class="breadcrumb">
       <li><a href="?module=beranda"><i class="fa fa-home"></i> Beranda </a></li>
-      <li><a href="?module=expired"> Barang Masuk </a></li>
+      <li><a href="?module=barang-masuk"> Barang Masuk </a></li>
       <li class="active"> Tambah </li>
     </ol>
   </section>
@@ -140,7 +140,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">info expired</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="info" autocomplete="off" value="<?php echo date("d-m-Y"); ?>" required>
+                  <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="ex_p" autocomplete="off" value="<?php echo date("d-m-Y"); ?>" required>
                 </div>
               </div>
 

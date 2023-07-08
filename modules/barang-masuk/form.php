@@ -140,7 +140,7 @@ if ($_GET['form']=='add') { ?>
               <div class="form-group">
                 <label class="col-sm-2 control-label">info expired</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="info" autocomplete="off" value="<?php echo date("d-m-Y"); ?>" required>
+                  <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" name="ex_p" autocomplete="off" value="<?php echo date("d-m-Y"); ?>" required>
                 </div>
               </div>
 

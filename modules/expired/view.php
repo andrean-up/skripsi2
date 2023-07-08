@@ -1,8 +1,8 @@
 <section class="content-header">
   <h1>
-    <i class="fa fa-sign-in icon-title"></i> Data Barang Expired
+    <i class="fa fa-sign-in icon-title"></i> Data Barang Masuk
 
-    <a class="btn btn-primary btn-social pull-right" href="?module=expired&form=add" title="Tambah Data" data-toggle="tooltip">
+    <a class="btn btn-primary btn-social pull-right" href="?module=form-barang-masuk&form=add" title="Tambah Data" data-toggle="tooltip">
       <i class="fa fa-plus"></i> Tambah
     </a>
   </h1>
@@ -58,15 +58,19 @@
                                             FROM db_barang_masuk as a INNER JOIN db_barang as b ON a.kode_barang=b.kode_barang ORDER BY kode_transaksi DESC")
                                             or die('Ada kesalahan pada query tampil Data barang Masuk: '.mysqli_error($mysqli));
 
-            // tampilkan data
+            // tampilkan data+
             while ($data = mysqli_fetch_assoc($query)) { 
               $tanggal         = $data['tanggal_masuk'];
               $exp             = explode('-',$tanggal);
               $tanggal_masuk   = $exp[2]."-".$exp[1]."-".$exp[0];
 
               $expireddate     = $data['expired'];
-              $exp2             = explode('-',$expireddate);
+              $exp2            = explode('-',$expireddate);
               $expired         = $exp2[2]."-".$exp2[1]."-".$exp2[0];
+
+              $expiredinfo     = $data['ex_p'];
+              $exp3            = explode('-',$expiredinfo);
+              $ex_p            = $exp3[2]."-".$exp3[1]."-".$exp3[0];
 
 
               // menampilkan isi tabel dari database ke tabel di aplikasi
@@ -77,7 +81,7 @@
                       <td width='100' class='center'>$data[kode_barang]</td>
                       <td width='200'class='center'>$data[nama_barang]</td>
                       <td width='100' class='center'>$expired</td>
-                      <td width='100' class='center'>$data[ex_p]</td>
+                      <td width='100' class='center'>$ex_p</td>
                       <td width='120' align='right' class='center'>$data[jumlah_masuk]</td>
                       <td width='80' class='center'>$data[satuan]</td>
                     </tr>";

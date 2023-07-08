@@ -27,6 +27,10 @@ else {
             $exp             = explode('-',$tanggal);
             $expired         = $exp[2]."-".$exp[1]."-".$exp[0];
 
+            $tanggal         = mysqli_real_escape_string($mysqli, trim($_POST['ex_p']));  
+            $exp             = explode('-',$tanggal);
+            $ex_p            = $exp[2]."-".$exp[1]."-".$exp[0];
+
             $total_stok      = mysqli_real_escape_string($mysqli, trim($_POST['total_stok']));
             
             $created_user    = $_SESSION['id_user'];
